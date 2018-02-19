@@ -26,7 +26,7 @@ test-all: ## run tests on every Python version with tox
 	pipenv run tox
 
 coverage: ## check code coverage quickly with the default Python
-	pipenv run coverage run --source django_use_email_as_username runtests.py tests
+	pipenv run coverage run --source django_use_email_as_username runtests.py
 	pipenv run coverage report -m
 	pipenv run coverage html
 	open htmlcov/index.html
