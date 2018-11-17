@@ -7,6 +7,7 @@ DEBUG = True
 
 INSTALLED_APPS = [
     'django.contrib.auth',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
 
     'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
