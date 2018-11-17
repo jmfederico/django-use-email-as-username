@@ -32,7 +32,7 @@ def contains_recursive(nl, target):
 
 
 class TestContainsRecursive(TestCase):
-    """Quick test for our recusive function."""
+    """Quick test for our recursive function."""
 
     test_list = [1, 'a']
     test_tuple = [2, 'b']
