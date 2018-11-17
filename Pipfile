@@ -1,18 +1,12 @@
 [[source]]
-
 url = 'https://pypi.python.org/simple'
 verify_ssl = true
 name = 'pypi'
 
-
 [packages]
 
-
 [dev-packages]
-
-django_use_email_as_username = {path = ".", editable = true}
-
-bumpversion = '*'
+django_use_email_as_username = {path = ".",editable = true}
 codecov = '*'
 coverage = '*'
 detox = '*'
