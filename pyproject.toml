@@ -3,7 +3,7 @@ name = "django-use-email-as-username"
 version = "1.0.2.dev0"
 description = "A Django app to use email as username for user authentication."
 
-license = "BSD-3-Clause-Clear"
+license = "BSD-3-Clause"
 
 authors = [
     "Federico Jaramillo Martínez <federicojaramillom@gmail.com>"
