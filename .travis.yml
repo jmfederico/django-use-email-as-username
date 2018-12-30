@@ -8,7 +8,7 @@ matrix:
     - python: "3.7"
       dist: xenial
       sudo: required
-install: pip install tox-travis
+install: pip install tox-travis poetry
 script: tox
 env:
   - POST_COMMAND="codecov -e TOX_ENV"

@@ -64,9 +64,8 @@ Ready to contribute? Here's how to set up `django-use-email-as-username` for loc
 
 3. Install for local development::
 
-    $ pip install pipenv
     $ cd django-use-email-as-username/
-    $ pipenv install --dev
+    $ poetry install
 
 4. Create a branch for local development::
 

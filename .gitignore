@@ -114,4 +114,4 @@ venv.bak/
 
 # End of https://www.gitignore.io/api/django,python
 
-Pipfile.lock
+poetry.lock

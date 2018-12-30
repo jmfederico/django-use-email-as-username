@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "django-use-email-as-username"
+version = "1.0.1.dev0"
+description = "A Django app to use email as username for user authentication."
+
+license = "BSD-3-Clause-Clear"
+
+authors = [
+    "Federico Jaramillo Martínez <federicojaramillom@gmail.com>"
+]
+
+readme = "README.rst"
+
+repository = "https://github.com/jmfederico/django-use-email-as-username"
+
+keywords = ["django", "email", "auth", "username"]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Django",
+    "Framework :: Django :: 1.11",
+    "Framework :: Django :: 2.0",
+    "Framework :: Django :: 2.1",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+]
+
+packages = [
+    { include = "django_use_email_as_username" },
+]
+include = [
+    "AUTHORS.rst",
+    "CONTRIBUTING.rst",
+    "HISTORY.rst",
+    "LICENSE",
+    "README.rst",
+    "django_use_email_as_username/**/*.py",
+    "django_use_email_as_username/**/*.py-tpl",
+]
+
+[tool.poetry.dependencies]
+python = "^3.4"
+django = ">=1.11"
+
+[tool.poetry.dev-dependencies]
+codecov = "*"
+coverage = "*"
+sphinx = "*"
+sphinx-autobuild = "*"
+sphinx-rtd-theme = "*"
+tox = "*"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
