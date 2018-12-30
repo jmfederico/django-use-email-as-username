@@ -73,10 +73,8 @@ Ready to contribute? Here's how to set up `django-use-email-as-username` for loc
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8 and the
-   tests, including testing other Python versions with tox::
+5. When you're done making changes, run the tests, adding new as required::
 
-    $ make lint
     $ make test-all
 
 6. Commit your changes and push your branch to GitHub::
