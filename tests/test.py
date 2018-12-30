@@ -112,7 +112,7 @@ class TestAppGeneration(TestCase):
         old_validate_name = TemplateCommand.validate_name
 
         def validate_name(self, name, app_or_project):
-            """Capture CommandError() form original method."""
+            """Capture CommandError() from original method."""
             try:
                 old_validate_name(self, name, app_or_project)
             except CommandError:
