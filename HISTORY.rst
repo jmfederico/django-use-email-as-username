@@ -6,6 +6,7 @@ History
 1.0.2.dev0
 ++++++++++++++++++
 
+* Format code with Black
 * Fix tests for Django 1.11
 
 1.0.1 (2018-12-30)
