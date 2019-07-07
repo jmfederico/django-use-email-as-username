@@ -3,7 +3,7 @@
 History
 -------
 
-1.0.2.dev0
+1.0.2 (2019-07-07)
 ++++++++++++++++++
 
 * Format code with Black
