@@ -8,6 +8,7 @@ History
 
 * Format code with Black
 * Fix tests for Django 1.11
+* Add tests for Django 2.2
 
 1.0.1 (2018-12-30)
 ++++++++++++++++++
