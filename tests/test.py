@@ -3,14 +3,13 @@
 import filecmp
 import os
 import shutil
+import sys
 import tempfile
 from pathlib import Path
 from unittest import mock
 
 from django.core.exceptions import FieldDoesNotExist
 from django.core.management import call_command
-from django.core.management.base import CommandError
-from django.core.management.templates import TemplateCommand
 from django.test import TestCase
 
 from custom_user_test.models import User
@@ -40,7 +39,7 @@ class TestContainsRecursive(TestCase):
     test_dict = {"int": 4, "str": "d"}
 
     test_nested = {
-        "list": [test_list, test_tuple, test_set, test_dict,],
+        "list": [test_list, test_tuple, test_set, test_dict],
     }
 
     def test_list_search(self):
@@ -89,57 +88,55 @@ class TestAppGeneration(TestCase):
     """Test custom app generations."""
 
     def setUp(self):
-        """Create temp directory to use in tests."""
+        """
+        Prepare test environment.
+
+        - Create temp directory to use in tests.
+        - Ensure `apps` is not in sys.path to avoid `CommandError` from `validate_name`.
+        - Remove `custom_user_test` from imported modules.
+        """
         self.test_dir = tempfile.mkdtemp()
+        self.original_path = sys.path[:]
+        self.original_modules = {**sys.modules}
+        sys.path.remove(os.path.dirname(os.path.abspath(__file__)) + "/apps")
+        del sys.modules["custom_user_test"]
 
     def tearDown(self):
-        """Remove temp directory used in tests."""
+        """
+        Revert modifications made by the test.
+
+        - Remove temp directory used in tests.
+        - Reset `sys.path` and `sys.modules`.
+        """
         shutil.rmtree(self.test_dir)
+        sys.path = self.original_path
+        sys.modules = self.original_modules
 
     def test_custom_app_is_created(self):
-        """
-        Test that create_custom_user_app command creates the app.
+        """Test that create_custom_user_app command creates the app."""
+        call_command(
+            "create_custom_user_app", "custom_user_test", directory=self.test_dir
+        )
+        custom_user_test_path = (
+            os.path.dirname(os.path.abspath(__file__)) + "/apps/custom_user_test"
+        )
 
-        To test the template we need to bypass the import_module() check
-        performed by TemplateCommand.validate_name.
-        This is performed inside a Mock context.
-        """
-        old_validate_name = TemplateCommand.validate_name
+        base_files = set()
+        for path in Path(self.test_dir).glob("**/*.py"):
+            base_files.add(str(path.relative_to(self.test_dir)))
 
-        def validate_name(instance, *args, **kwargs):
-            """Capture CommandError() from original method."""
-            try:
-                old_validate_name(instance, *args, **kwargs)
-            except CommandError:
-                pass
+        test_files = set()
+        for path in Path(custom_user_test_path).glob("**/*.py"):
+            test_files.add(str(path.relative_to(custom_user_test_path)))
 
-        with mock.patch.object(TemplateCommand, "validate_name", validate_name):
+        all_files = base_files.union(test_files)
+        difference = base_files.symmetric_difference(test_files)
 
-            call_command(
-                "create_custom_user_app", "custom_user_test", directory=self.test_dir
-            )
-            custom_user_test_path = (
-                os.path.dirname(os.path.abspath(__file__)) + "/apps/custom_user_test"
-            )
+        comparison = filecmp.cmpfiles(self.test_dir, custom_user_test_path, all_files)
 
-            base_files = set()
-            for path in Path(self.test_dir).glob("**/*.py"):
-                base_files.add(str(path.relative_to(self.test_dir)))
-
-            test_files = set()
-            for path in Path(custom_user_test_path).glob("**/*.py"):
-                test_files.add(str(path.relative_to(custom_user_test_path)))
-
-            all_files = base_files.union(test_files)
-            difference = base_files.symmetric_difference(test_files)
-
-            comparison = filecmp.cmpfiles(
-                self.test_dir, custom_user_test_path, all_files
-            )
-
-            self.assertEqual(difference, {"migrations/0001_initial.py"})
-            self.assertEqual(difference, set(comparison[2]))
-            self.assertEqual(base_files, set(comparison[0]))
+        self.assertEqual(difference, {"migrations/0001_initial.py"})
+        self.assertEqual(difference, set(comparison[2]))
+        self.assertEqual(base_files, set(comparison[0]))
 
 
 class TestUserModel(TestCase):
@@ -154,17 +151,17 @@ class TestUserModel(TestCase):
         self.assertEqual(User.USERNAME_FIELD, "email")
 
     def test_email_is_unique(self):
-        """Test tha the email field is unique."""
+        """Test that the email field is unique."""
         email_field = User._meta.get_field("email")
         self.assertTrue(email_field.unique)
 
     def test_email_is_not_null(self):
-        """Test tha the email field is not null."""
+        """Test that the email field is not null."""
         email_field = User._meta.get_field("email")
         self.assertFalse(email_field.null)
 
     def test_email_is_not_blank(self):
-        """Test tha the email field is not blank."""
+        """Test that the email field is not blank."""
         email_field = User._meta.get_field("email")
         self.assertFalse(email_field.blank)
 
