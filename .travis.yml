@@ -1,16 +1,10 @@
 language: python
 python:
+  - "3.4"
   - "3.5"
   - "3.6"
-matrix:
-  include:
-    - python: "3.4"
-    - python: "3.7"
-      dist: xenial
-    - python: "3.8-dev"
-      dist: xenial
-  allow_failures:
-    - python: "3.8-dev"
+  - "3.7"
+  - "3.8"
 install: pip install tox-travis
 script: tox
 env:
