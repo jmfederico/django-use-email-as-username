@@ -92,25 +92,26 @@ class TestAppGeneration(TestCase):
         Prepare test environment.
 
         - Create temp directory to use in tests.
-        - Ensure `apps` is not in sys.path to avoid `CommandError` from `validate_name`.
-        - Remove `custom_user_test` from imported modules.
+        - Avoid `CommandError` from `validate_name:
+            - Ensure `apps` is not in sys.path to .
+            - Remove `custom_user_test` from `sys.modules`.
         """
         self.test_dir = tempfile.mkdtemp()
         self.original_path = sys.path[:]
-        self.original_modules = {**sys.modules}
         sys.path.remove(os.path.dirname(os.path.abspath(__file__)) + "/apps")
-        del sys.modules["custom_user_test"]
+        self.custom_user_test_module = sys.modules.pop("custom_user_test")
 
     def tearDown(self):
         """
         Revert modifications made by the test.
 
         - Remove temp directory used in tests.
-        - Reset `sys.path` and `sys.modules`.
+        - Reset `sys.path`.
+        - Add `custom_user_test` back to `sys.modules`.
         """
         shutil.rmtree(self.test_dir)
         sys.path = self.original_path
-        sys.modules = self.original_modules
+        sys.modules["custom_user_test"] = self.custom_user_test_module
 
     def test_custom_app_is_created(self):
         """Test that create_custom_user_app command creates the app."""
