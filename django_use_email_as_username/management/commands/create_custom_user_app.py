@@ -32,5 +32,8 @@ class Command(BaseCommand):
         options["template"] = (
             os.path.dirname(os.path.abspath(__file__)) + "/app_template"
         )
-        options.pop("skip_checks")
+        try:
+            del options["skip_checks"]
+        except KeyError:
+            pass
         call_command("startapp", name, **options)
