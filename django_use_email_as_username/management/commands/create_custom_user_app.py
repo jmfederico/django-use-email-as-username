@@ -11,8 +11,8 @@ class Command(BaseCommand):
 
     requires_system_checks = False
     help = (
-        "Creates a Django app hat subclasses the User model declared by Django Use"
-        " Email as Username."
+        "Creates a Django app with a custom User model that subclasses the"
+        " User model declared by Django Use Email as Username."
     )
 
     def add_arguments(self, parser):
