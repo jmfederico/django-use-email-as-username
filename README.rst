@@ -31,39 +31,57 @@ Features
 Quickstart
 ----------
 
-1. Install **Django use Email as Username**::
+#. Install **Django use Email as Username**:
 
-    $ pip install django-use-email-as-username
+   .. code-block:: shell
 
-2. Add it to your *INSTALLED_APPS*::
+      # Run in your terminal
+      pip install django-use-email-as-username
 
-    INSTALLED_APPS = (
-        ...
-        'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
-        ...
-    )
+#. Add it to your *INSTALLED_APPS*:
 
-3. Create you new django app::
+   .. code-block:: python
 
-    $ python manage.py create_custom_user_app
+      # In your settings.py file
+      INSTALLED_APPS = (
+          ...
+          'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
+          ...
+      )
 
-4. Add the new app to your *INSTALLED_APPS*::
+#. Create your new django app:
 
-    INSTALLED_APPS = (
-        ...
-        'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
-        'custom_user.apps.CustomUserConfig',
-        ...
-    )
+   .. code-block:: shell
 
-5. Now instruct Django to use your new model::
+      # Run in your terminal
+      python manage.py create_custom_user_app
 
-    AUTH_USER_MODEL = 'custom_user.User'
+#. Add the new app to your *INSTALLED_APPS*:
 
-6. Create and run migrations::
+   .. code-block:: python
 
-    $ python manage.py makemigrations
-    $ python manage.py migrate
+      # In your settings.py file
+      INSTALLED_APPS = (
+          ...
+          'django_use_email_as_username.apps.DjangoUseEmailAsUsernameConfig',
+          'custom_user.apps.CustomUserConfig',
+          ...
+      )
+
+#. Now instruct Django to use your new model:
+
+   .. code-block:: python
+
+      # In your settings.py file
+      AUTH_USER_MODEL = 'custom_user.User'
+
+#. Create and run migrations:
+
+   .. code-block:: shell
+
+      # Run in your terminal
+      python manage.py makemigrations
+      python manage.py migrate
 
 You now have a new Django app which provides a custom User model.
 
