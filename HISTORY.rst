@@ -6,7 +6,12 @@ History
 1.1.2.dev0
 ++++++++++++++++++
 
-* ...
+* Fix distributed build - remove extra unnecessary files.
+
+1.1.1 (2020-02-10)
+++++++++++++++++++
+
+* Fix `KeyError: 'skip checks'` error `[#5] <https://github.com/jmfederico/django-use-email-as-username/issues/5>`_
 
 1.1.0 (2020-01-15)
 ++++++++++++++++++
