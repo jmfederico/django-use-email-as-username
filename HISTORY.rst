@@ -3,7 +3,7 @@
 History
 -------
 
-1.1.2.dev0
+1.1.2
 ++++++++++++++++++
 
 * Fix distributed build - remove extra unnecessary files.
