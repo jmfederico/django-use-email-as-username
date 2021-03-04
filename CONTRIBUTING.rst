@@ -95,4 +95,4 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. Make sure that the tests pass for all supported Python versions, check
-   https://travis-ci.org/jmfederico/django-use-email-as-username/pull_requests
+   https://travis-ci.com/github/jmfederico/django-use-email-as-username/pull_requests
