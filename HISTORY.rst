@@ -6,7 +6,10 @@ History
 1.1.3.dev0
 ++++++++++++++++++
 
-* ...
+* Add tests for Python 3.9
+* Compatible with Django 3.1
+* Upgrade build system to poetry-core>=1.0.0
+* Remove dependencies version ceiling
 
 1.1.2
 ++++++++++++++++++
