@@ -3,7 +3,7 @@
 History
 -------
 
-1.1.3.dev0
+1.2.0.dev0
 ++++++++++++++++++
 
 * Add tests for Python 3.9
