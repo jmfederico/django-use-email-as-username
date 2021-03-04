@@ -7,6 +7,7 @@ History
 ++++++++++++++++++
 
 * Add tests for Python 3.9
+* Remove support for deprecated Python 3.4
 * Compatible with Django 3.1
 * Upgrade build system to poetry-core>=1.0.0
 * Remove dependencies version ceiling

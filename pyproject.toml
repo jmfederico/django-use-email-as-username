@@ -32,7 +32,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.4"
+python = ">=3.5"
 django = ">=1.11"
 # Abuse extras to make testing easier with TOX
 codecov = {version = ">=2.0.15", optional = true}
@@ -47,5 +47,5 @@ sphinx-autobuild = "*"
 sphinx-rtd-theme = "*"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
