@@ -11,6 +11,7 @@ History
 * Compatible with Django 3.1
 * Upgrade build system to poetry-core>=1.0.0
 * Remove dependencies version ceiling
+* Fix "django40 warning: django.utils.translation.ugettext_lazy() is deprecated"
 
 1.1.2
 ++++++++++++++++++
