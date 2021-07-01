@@ -22,6 +22,7 @@ TEMPLATES = [
             "context_processors": [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.request",
             ],
         },
     },
@@ -40,3 +41,5 @@ DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memor
 USE_TZ = True
 
 AUTH_USER_MODEL = "custom_user_test.User"
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

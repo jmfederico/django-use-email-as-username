@@ -13,6 +13,8 @@ History
 * Remove dependencies version ceiling
 * Fix "django40 warning: django.utils.translation.ugettext_lazy() is deprecated"
 * Add tests for Django 3.2
+* Add tests for Django 4.0
+* Add tests for Python 3.10
 
 1.1.2
 ++++++++++++++++++

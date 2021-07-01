@@ -5,7 +5,11 @@ python:
   - "3.7"
   - "3.8"
   - "3.9"
+  - "3.10-dev"
 install: pip install tox-travis
 script: tox
 env:
   - POST_COMMAND="codecov -e TOX_ENV"
+jobs:
+  allow_failures:
+    - python: "3.10-dev"
