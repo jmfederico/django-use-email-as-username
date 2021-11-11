@@ -9,7 +9,11 @@ python:
 install: pip install tox-travis
 script: tox
 env:
-  - POST_COMMAND="codecov -e TOX_ENV"
+  global:
+    - POST_COMMAND="codecov -e TOX_ENV"
+  jobs:
+    - ALLOW_FAILURES=false
+    - ALLOW_FAILURES=true
 jobs:
   allow_failures:
-    - python: "3.10-dev"
+    - env: ALLOW_FAILURES=true
