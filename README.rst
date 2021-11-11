@@ -5,8 +5,8 @@ Django use Email as Username
 .. image:: https://badge.fury.io/py/django-use-email-as-username.svg
     :target: https://badge.fury.io/py/django-use-email-as-username
 
-.. image:: https://travis-ci.com/jmfederico/django-use-email-as-username.svg?branch=master
-    :target: https://travis-ci.com/jmfederico/django-use-email-as-username
+.. image:: https://app.travis-ci.com/jmfederico/django-use-email-as-username.svg?branch=main
+    :target: https://app.travis-ci.com/jmfederico/django-use-email-as-username
 
 .. image:: https://codecov.io/gh/jmfederico/django-use-email-as-username/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/jmfederico/django-use-email-as-username
