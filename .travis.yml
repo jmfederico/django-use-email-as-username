@@ -13,7 +13,7 @@ env:
     - POST_COMMAND="codecov -e TOX_ENV"
   jobs:
     - ALLOW_FAILURES=false
-    - ALLOW_FAILURES=true
+    # - ALLOW_FAILURES=true
 jobs:
   allow_failures:
     - env: ALLOW_FAILURES=true
