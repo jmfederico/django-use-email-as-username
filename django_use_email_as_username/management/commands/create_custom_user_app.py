@@ -9,7 +9,7 @@ from django.core.management.templates import BaseCommand
 class Command(BaseCommand):
     """Define create_emailuser_app command."""
 
-    requires_system_checks = False
+    requires_system_checks = []
     help = (
         "Creates a Django app with a custom User model that subclasses the"
         " User model declared by Django Use Email as Username."
