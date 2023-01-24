@@ -3,6 +3,13 @@
 History
 -------
 
+1.3.0
+++++++++++++++++++
+
+* Add tests for Python 3.11
+* Compatible with Django 4.1
+
+
 1.2.0
 ++++++++++++++++++
 
