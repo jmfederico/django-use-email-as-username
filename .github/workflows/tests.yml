@@ -42,7 +42,7 @@ jobs:
       - name: Set tox environment
         run: python -c "import sys; print('TOXENV=py', sys.version_info.major, sys.version_info.minor, sep='')" >> "$GITHUB_ENV"
       - name: Setup test suite
-        run: tox -vv --notest
+        run: tox -vv --notest -e ${{ env.TOXENV }}
       - name: Run test suite
         run: tox --skip-pkg-install
       - uses: codecov/codecov-action@v3
