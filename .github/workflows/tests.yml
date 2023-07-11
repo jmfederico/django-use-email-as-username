@@ -22,11 +22,6 @@ jobs:
           - "3.7"
         os:
           - ubuntu-22.04
-        include:
-          - os: ubuntu-20.04
-            py: '3.6'
-          - os: ubuntu-20.04
-            py: '3.5'
     steps:
       - uses: actions/checkout@v3
         with:
@@ -34,15 +29,11 @@ jobs:
       - name: Setup python for test ${{ matrix.py }}
         uses: actions/setup-python@v4
         with:
-          python-version: |
-            3.11
-            ${{ matrix.py }}
+          python-version: ${{ matrix.py }}
       - name: Install tox
-        run: python3.11 -m pip install --user tox
-      - name: Set tox environment
-        run: python -c "import sys; print('TOXENV=py', sys.version_info.major, sys.version_info.minor, sep='')" >> "$GITHUB_ENV"
+        run: python -m pip install tox-gh>=1.2
       - name: Setup test suite
-        run: tox -vv --notest -e ${{ env.TOXENV }}
+        run: tox -vv --notest
       - name: Run test suite
-        run: tox --skip-pkg-install -e ${{ env.TOXENV }}
+        run: tox --skip-pkg-install
       - uses: codecov/codecov-action@v3
