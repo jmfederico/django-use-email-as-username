@@ -38,7 +38,9 @@ jobs:
             ${{ matrix.py }}
             3.11
       - name: Install tox
-        run: python3.11 -m pip install tox-gh>=1.2
+        run: python3.11 -m pip install --user tox
+      - name: Set tox environment
+        run: python -c "import sys; print('TOXENV=py', sys.version_info.major, sys.version_info.minor, sep='')" >> "$GITHUB_ENV"
       - name: Setup test suite
         run: tox -vv --notest
       - name: Run test suite
