@@ -137,5 +137,6 @@ dmypy.json
 
 # End of https://www.gitignore.io/api/django
 
-poetry.lock
 .vscode
+pdm.lock
+.pdm-python
