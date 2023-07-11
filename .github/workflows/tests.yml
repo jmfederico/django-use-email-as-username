@@ -44,5 +44,5 @@ jobs:
       - name: Setup test suite
         run: tox -vv --notest -e ${{ env.TOXENV }}
       - name: Run test suite
-        run: tox --skip-pkg-install
+        run: tox --skip-pkg-install -e ${{ env.TOXENV }}
       - uses: codecov/codecov-action@v3
