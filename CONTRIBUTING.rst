@@ -65,7 +65,7 @@ Ready to contribute? Here's how to set up `django-use-email-as-username` for loc
 3. Install for local development::
 
     $ cd django-use-email-as-username/
-    $ pdm install
+    $ pdm install -G testing
 
 4. Create a branch for local development::
 

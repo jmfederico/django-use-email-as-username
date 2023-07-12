@@ -11,7 +11,7 @@ To run this example, follow these instructions:
 1. Navigate to the `example` directory
 2. Install the requirements for the package::
 
-		pdm sync --prod
+		pdm install --prod
 
 3. Make and apply migrations::
 
