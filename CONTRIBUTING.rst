@@ -65,7 +65,7 @@ Ready to contribute? Here's how to set up `django-use-email-as-username` for loc
 3. Install for local development::
 
     $ cd django-use-email-as-username/
-    $ poetry install
+    $ pdm install
 
 4. Create a branch for local development::
 
@@ -75,7 +75,7 @@ Ready to contribute? Here's how to set up `django-use-email-as-username` for loc
 
 5. When you're done making changes, run the tests, adding new as required::
 
-    $ make test-all
+    $ pdm run tox
 
 6. Commit your changes and push your branch to GitHub::
 

@@ -3,6 +3,13 @@
 History
 -------
 
+1.4.0
+++++++++++++++++++
+
+* Drop support for Python 3.5 and 3.6
+* Compatible with Django 4.2
+* Replace Poetry with PDM
+
 1.3.0
 ++++++++++++++++++
 

@@ -11,15 +11,15 @@ To run this example, follow these instructions:
 1. Navigate to the `example` directory
 2. Install the requirements for the package::
 
-		poetry install --no-dev
+		pdm sync --prod
 
 3. Make and apply migrations::
 
-		poetry run python manage.py makemigrations
-		poetry run python manage.py migrate
+		pdm run python manage.py makemigrations
+		pdm run python manage.py migrate
 
 4. Run the server::
 
-		poetry run python manage.py runserver
+		pdm run python manage.py runserver
 
 5. Access from the browser at http://127.0.0.1:8000
