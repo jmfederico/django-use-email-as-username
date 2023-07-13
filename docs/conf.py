@@ -22,7 +22,7 @@
 import django_use_email_as_username
 
 project = 'Django use Email as Username'
-copyright = '2018, Federico Jaramillo Martínez'
+copyright = 'Federico Jaramillo Martínez'
 author = 'Federico Jaramillo Martínez'
 
 # The short X.Y version
