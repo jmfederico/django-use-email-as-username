@@ -4,7 +4,7 @@ authors = [
 ]
 requires-python = ">=3.7"
 dependencies = [
-    "django>=1.11",
+    "django",
 ]
 name = "django-use-email-as-username"
 version = "1.4.0"
