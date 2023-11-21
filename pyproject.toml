@@ -1,6 +1,6 @@
 [project]
 authors = [
-    {name = "Federico Jaramillo Martínez", email = "federicojaramillom@gmail.com"},
+    {name = "Federico Jaramillo Martinez", email = "federicojaramillom@gmail.com"},
 ]
 requires-python = ">=3.7"
 dependencies = [
