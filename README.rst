@@ -1,3 +1,15 @@
+==================
+🔔 PROJECT STATUS 🔔
+==================
+Life has taken me to now work in GO_, and do not have the time to actively maintain this project.
+
+.. _GO: https://go.dev/
+
+Which means this project is looking for new maintainer, please `open an issue and postulate yourself`_ if interested.
+
+
+.. _`open an issue and postulate yourself`: https://github.com/jmfederico/django-use-email-as-username/issues/new
+
 ============================
 Django use Email as Username
 ============================
