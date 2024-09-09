@@ -8,5 +8,4 @@ Contents:
 
    readme
    contributing
-   authors
    history
